@@ -21,10 +21,10 @@ class SessionController extends Controller
             return redirect('/');
         }
 
-        return back()->withError(['email' => 'Your provided credentials could not be verified']);
+        return back()->withInput()->withError(['email' => 'Your provided credentials could not be verified']);
+        
     }
     
-
     public function create(){
 
         return view('sessions.create');
